@@ -1,0 +1,48 @@
+&CONTROL
+   calculation      = 'vc-relax'
+   nstep            = 200
+   tstress          = .true.
+   tprnfor          = .true.
+   etot_conv_thr    = 0.0001
+   forc_conv_thr    = 0.001
+   disk_io          = 'nowf'
+   pseudo_dir       = '/home/hanchen2/pseudopotential_orbital/SG15_ONCV_v1.0_upf/'
+/
+&SYSTEM
+   ibrav            = 0
+   nat              = 4
+   ntyp             = 2
+   ecutwfc          = 140
+/
+&ELECTRONS
+   electron_maxstep = 200
+   conv_thr         = 1e-06
+   startingpot      = 'atomic'
+   startingwfc      = 'atomic'
+/
+&IONS
+   ion_dynamics     = 'bfgs'
+/
+&CELL
+   cell_dynamics    = 'bfgs'
+   press_conv_thr   = 0.5
+/
+
+ATOMIC_SPECIES
+C 12.011 C_ONCV_PBE-1.0.upf
+F 18.998403163 F_ONCV_PBE-1.0.upf
+
+K_POINTS automatic
+16 16 6  0 0 0
+
+CELL_PARAMETERS angstrom
+2.61923000000000 0.00000000000000 0.00000000000000
+-1.30961500000000 2.26831971835432 0.00000000000000
+0.00000000000000 0.00000000000000 6.15727000000000
+
+ATOMIC_POSITIONS angstrom
+C -0.1085670835 1.5748943805 2.0081320378  
+C 1.2000918976 0.8193397655 2.5000979108  
+F -0.1033417196 1.5718775152 0.6329057833  
+F 1.1998168784 0.8194985478 3.8755704561  
+
